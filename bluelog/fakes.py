@@ -17,7 +17,7 @@ def fake_admin():
     admin = Admin(
         username='admin',
         blog_title='BlueLog',
-        blog_sub_title='I am the blog sub title',
+        blog_sub_title='Nothing is real, but all is possible',
         name='Jack Jones',
         about='The captain of um...'
     )
