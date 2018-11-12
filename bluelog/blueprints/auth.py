@@ -2,16 +2,20 @@
 # _*_ coding: utf-8 _*_
 
 
-from flask import Blueprint
+from flask import Blueprint, render_template
+
+from bluelog.forms import LoginForm
+from bluelog.utils import redirect_back
 
 auth_bp = Blueprint('auth', __name__)
 
 
 @auth_bp.route('/login', methods=['GET', 'POST'])
 def login():
-    return 'The login page'
+    form = LoginForm()
+    return render_template('auth/login.html', form=form)
 
 
 @auth_bp.route('/logout')
 def logout():
-    return 'Logout'
+    return redirect_back()

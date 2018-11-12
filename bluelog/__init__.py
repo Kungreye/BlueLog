@@ -10,7 +10,7 @@ from bluelog.blueprints.admin import admin_bp
 from bluelog.blueprints.auth import  auth_bp
 from bluelog.blueprints.blog import blog_bp
 from bluelog.extensions import bootstrap, db, ckeditor, mail, moment
-from bluelog.models import Admin, Post, Category, Comment
+from bluelog.models import Admin, Post, Category, Comment, Link
 from bluelog.settings import config
 
 
@@ -100,7 +100,7 @@ def register_commands(app):
     @click.option('--comment', default=500, help='Quantity of comments, default is 500.')
     def forge(category, post, comment):
         """Generate fake categories, posts, and comments..."""
-        from bluelog.fakes import fake_admin, fake_categories, fake_posts, fake_comments
+        from bluelog.fakes import fake_admin, fake_categories, fake_posts, fake_comments, fake_links
 
         db.drop_all()
         db.create_all()
@@ -116,5 +116,8 @@ def register_commands(app):
 
         click.echo('Generating %d comments...' % comment)
         fake_comments(comment)
+
+        click.echo('Generating links...')
+        fake_links()
 
         click.echo('Done.')
