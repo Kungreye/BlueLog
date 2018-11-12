@@ -1,3 +1,4 @@
+{% from 'bootstrap/nav.html' import render_nav_item %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,9 +22,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
+                    {{ render_nav_item('blog.index', 'Home') }}
+                    {{ render_nav_item('blog.about', 'About') }}
                 </ul>
             </div>
         </div>
