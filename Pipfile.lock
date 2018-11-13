@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "21a1d89288aeb3577ec77fa2e3d315659bbbff5be3d59871e4d5c789f5db4c89"
+            "sha256": "2cd4604ebb5e9b21f2fdd89d0a4033ac3cdfa64ce669cc59243405d4cbf3dd80"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -70,6 +70,13 @@
             ],
             "index": "aliyun",
             "version": "==0.4.3"
+        },
+        "flask-login": {
+            "hashes": [
+                "sha256:c815c1ac7b3e35e2081685e389a665f2c74d7e077cb93cecabaea352da4752ec"
+            ],
+            "index": "aliyun",
+            "version": "==0.4.1"
         },
         "flask-mail": {
             "hashes": [

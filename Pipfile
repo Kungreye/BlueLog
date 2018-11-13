@@ -23,6 +23,7 @@ python-dotenv = "*"
 flask-ckeditor = "*"
 flask-wtf = "*"
 faker = "*"
+flask-login = "*"
 
 [dev-packages]
 

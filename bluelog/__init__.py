@@ -9,7 +9,7 @@ from flask import Flask, render_template
 from bluelog.blueprints.admin import admin_bp
 from bluelog.blueprints.auth import  auth_bp
 from bluelog.blueprints.blog import blog_bp
-from bluelog.extensions import bootstrap, db, ckeditor, mail, moment
+from bluelog.extensions import bootstrap, db, ckeditor, csrf, login_manager, mail, moment
 from bluelog.models import Admin, Post, Category, Comment, Link
 from bluelog.settings import config
 
@@ -43,6 +43,8 @@ def register_extensions(app):
     bootstrap.init_app(app)
     db.init_app(app)
     ckeditor.init_app(app)
+    csrf.init_app(app)
+    login_manager.init_app(app)
     mail.init_app(app)
     moment.init_app(app)
 
@@ -93,6 +95,41 @@ def register_commands(app):
             click.echo('Drop tables.')
         db.create_all()
         click.echo('Initialized databases.')
+
+    @app.cli.command()
+    @click.option('--username', prompt=True, help='The username used to login.')
+    @click.option('--password', prompt=True, hide_input=True,
+                  confirmation_prompt=True, help='The password used to login.')
+    def init(username, password):
+        """Building BlueLog, just for you."""
+        click.echo('Initializing the database...')
+        db.create_all()
+
+        admin = Admin.query.first()
+        if admin:
+            click.echo('The administrator already exists, updating...')
+            admin.username = username
+            admin.set_password(password)
+        else:
+            click.echo('Creating the temporary administrator account...')
+            admin = Admin(
+                username=username,
+                blog_title='BlueLog',
+                blog_sub_title='Nothing is real, but all is possible.',
+                name='Admin',
+                about='Anything about you.'
+            )
+            admin.set_password(password)
+            db.session.add(admin)
+
+        category = Category.query.first()
+        if category is None:
+            click.echo('Creating the default category...')
+            category = Category(name='Default')
+            db.session.add(category)
+
+        db.session.commit()
+        click.echo('Done.')
 
     @app.cli.command()
     @click.option('--category', default=10, help='Quantity of categories, default is 10.')
