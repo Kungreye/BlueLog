@@ -21,7 +21,7 @@ def fake_admin():
         name='Jack Jones',
         about='The captain of um...'
     )
-    #admin.set_password('helloflask')
+    admin.set_password('HELLOWORLD')
     db.session.add(admin)
     db.session.commit()
 

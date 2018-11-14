@@ -24,6 +24,7 @@ flask-ckeditor = "*"
 flask-wtf = "*"
 faker = "*"
 flask-login = "*"
+flask-migrate = "*"
 
 [dev-packages]
 
