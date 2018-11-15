@@ -25,6 +25,7 @@ flask-wtf = "*"
 faker = "*"
 flask-login = "*"
 flask-migrate = "*"
+flask-debugtoolbar = "*"
 
 [dev-packages]
 

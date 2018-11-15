@@ -29,5 +29,5 @@ def load_user(user_id):
 
 
 login_manager.login_view = 'auth.login'
-login_manager.login_message = 'Please login to access this message.'
+login_manager.login_message = 'Please log in to access this page.'
 login_manager.login_message_category = 'warning'

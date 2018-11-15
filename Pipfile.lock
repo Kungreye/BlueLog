@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "36b1a43e739a8f4ffffa02b6fb8626cc67d7b6385197d868b0a2f1952993c02e"
+            "sha256": "48a5fb8426555166b264ed4245674099dc22d48ddf3b6bb933d4203ea241f0ff"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -28,9 +28,9 @@
     "default": {
         "alembic": {
             "hashes": [
-                "sha256:04bcb970ca8659c3607ddd8ffd86cc9d6a99661c9bc590955e8813c66bfa582b"
+                "sha256:4b6ff7433247fe80b6ef522ef3763acb959cbdef027d03f76f4cd3c7118c1872"
             ],
-            "version": "==1.0.2"
+            "version": "==1.0.3"
         },
         "blinker": {
             "hashes": [
@@ -76,6 +76,14 @@
             ],
             "index": "aliyun",
             "version": "==0.4.3"
+        },
+        "flask-debugtoolbar": {
+            "hashes": [
+                "sha256:3d9657bc0c3633ace429e3ff451742bb59d1b7a7b95c9eb23a65ac9be2812959",
+                "sha256:ec810083123aae0632eb32ba11e1cb4cdace81e7ce6c5009dd06c5204afbce52"
+            ],
+            "index": "aliyun",
+            "version": "==0.10.1"
         },
         "flask-login": {
             "hashes": [
