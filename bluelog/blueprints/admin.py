@@ -19,8 +19,8 @@ def settings():
     form = SettingForm()
     if form.validate_on_submit():
         current_user.name = form.name.data
-        current_user.blog_title = form.title.data
-        current_user.blog_sub_title = form.blog_sub_title
+        current_user.blog_title = form.blog_title.data
+        current_user.blog_sub_title = form.blog_sub_title.data
         current_user.about = form.about.data
         db.session.commit()
         flash('Setting updated.', 'success')
@@ -92,7 +92,7 @@ def delete_post(post_id):
 @admin_bp.route('/post/<int:post_id>/set-comment', methods=['POST'])
 @login_required
 def set_comment(post_id):
-    post = Post.quer.get_or_404(post_id)
+    post = Post.query.get_or_404(post_id)
     if post.can_comment:
         post.can_comment = False
         flash('Comment disabled.', 'success')
@@ -124,7 +124,7 @@ def manage_comment():
 @admin_bp.route('/comment/<int:comment_id>/approve', methods=['POST'])
 @login_required
 def approve_comment(comment_id):
-    comment = Comment.query.get_or_4040(comment_id)
+    comment = Comment.query.get_or_404(comment_id)
     comment.reviewed = True
     db.session.commit()
     flash('Comment published.', 'success')
