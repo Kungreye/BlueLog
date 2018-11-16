@@ -19,7 +19,7 @@ from bluelog.models import Category
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(1, 20)])
-    password = PasswordField('Password', validators=[DataRequired(), Length(8, 128)])
+    password = PasswordField('Password', validators=[DataRequired(), Length(8, 128)])   # note length in test_login
     remember = BooleanField('Remember me')
     submit = SubmitField('Log in')
 

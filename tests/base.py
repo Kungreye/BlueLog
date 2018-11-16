@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # _*_ coding: utf-8 _*_
 
 import unittest
@@ -27,7 +26,7 @@ class BaseTestCase(unittest.TestCase):
             name='Jeremy Lin',
             about='Test About'
         )
-        user.set_password('123')
+        user.set_password('12345678')   # LoginForm: password -> length(8, 128)
         db.session.add(user)
         db.session.commit()
 
@@ -38,11 +37,11 @@ class BaseTestCase(unittest.TestCase):
     def login(self, username=None, password=None):
         if username is None and password is None:
             username = 'Jeremy'
-            password = '123'
+            password = '12345678'
 
         return self.client.post(url_for('auth.login'), data=dict(
             username=username,
-            password=password
+            password=password,
         ), follow_redirects=True)
 
     def logout(self):
