@@ -26,6 +26,8 @@ faker = "*"
 flask-login = "*"
 flask-migrate = "*"
 flask-debugtoolbar = "*"
+coverage = "*"
+"flake8" = "*"
 
 [dev-packages]
 

@@ -22,10 +22,10 @@ class BaseTestCase(unittest.TestCase):
         db.create_all()
         user = Admin(
             username='Jeremy',
-            blog_title='TestLog',
-            blog_sub_title='a test',
+            blog_title='Testlog',
+            blog_sub_title='Test Sub Title',
             name='Jeremy Lin',
-            about='I am test'
+            about='Test About'
         )
         user.set_password('123')
         db.session.add(user)
