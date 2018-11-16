@@ -17,7 +17,7 @@ class BasicTestCase(BaseTestCase):
     def test_404_error(self):
         response = self.client.get('/nothing')
         data = response.get_data(as_text=True)
-        self.assertEqual(data.status_code, 404)
+        self.assertEqual(response.status_code, 404)
         self.assertIn('404 Error', data)
 
     def test_400_error(self):
@@ -27,7 +27,7 @@ class BasicTestCase(BaseTestCase):
 
         response = self.client.get('/400')
         data = response.get_data(as_text=True)
-        self.assertEqual(data.status_code, 400)
+        self.assertEqual(response.status_code, 400)
         self.assertIn('400 Error', data)
 
     def test_500_error(self):
@@ -37,5 +37,5 @@ class BasicTestCase(BaseTestCase):
 
         response = self.client.get('/500')
         data = response.get_data(as_text=True)
-        self.assertEqual(data.status_code, 500)
+        self.assertEqual(response.status_code, 500)
         self.assertIn('500 Error', data)
