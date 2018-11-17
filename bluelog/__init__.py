@@ -106,7 +106,7 @@ def register_commands(app):
             db.drop_all()
             click.echo('Drop tables.')
         db.create_all()
-        click.echo('Initialized databases.')
+        click.echo('Initialized database.')
 
     @app.cli.command()
     @click.option('--username', prompt=True, help='The username used to login.')

@@ -34,7 +34,7 @@ class CLITestCase(BaseTestCase):
         result = self.runner.invoke(args=['init', '--username', 'new David Tao', '--password', '123'])
         self.assertIn('The administrator already exists, updating...', result.output)
         self.assertNotIn('Creating the temporary administrator account...', result.output)
-        self.assertEqual(Admin.query.coutn(), 1)
+        self.assertEqual(Admin.query.count(), 1)
         self.assertEqual(Admin.query.first().username, 'new David Tao')
         self.assertEqual(Category.query.first().name, 'Default')
 
@@ -48,7 +48,7 @@ class CLITestCase(BaseTestCase):
         self.assertIn('Generating 50 posts...', result.output)
 
         # BaseTestCase.setUp() already creates 1 category
-        self.assertEqual(Category.query.count(), 10 + 1)
+        self.assertEqual(Category.query.count(), 10 + 1)    # Since `fake_categories` could possbily drop some conflicting fake data(same name), this test could fail.
         self.assertIn('Generating 10 categories...', result.output)
 
         # salt = 0.1; unreviewed/admin's/reply = count * salt
@@ -66,7 +66,7 @@ class CLITestCase(BaseTestCase):
         self.assertEqual(Post.query.count(), 20)
         self.assertIn('Generating 20 posts...', result.output)
 
-        self.assertEqual(Category.query.count(), 5 + 1)
+        self.assertEqual(Category.query.count(), 5 + 1)     # Since `fake_categories` could possbily drop some conflicting fake data(same name), this test could fail.
         self.assertIn('Generating 5 categories...', result.output)
 
         # salt = 0.1
