@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # _*_ coding: utf-8 _*_
 
 import unittest
@@ -70,7 +69,7 @@ class AdminTestCase(BaseTestCase):
         response = self.client.get(url_for('admin.delete_comment', comment_id=1), follow_redirects=True)
         data = response.get_data(as_text=True)
         self.assertNotIn('Comment deleted.', data)
-        self.assertIn('405 Method Not Allowed.', data)
+        self.assertIn('405 Method Not Allowed', data)   # No `.` at the end of '405 Method Not Allowed'
 
         response = self.client.post(url_for('admin.delete_comment', comment_id=1), follow_redirects=True)
         data = response.get_data(as_text=True)
@@ -105,7 +104,7 @@ class AdminTestCase(BaseTestCase):
             author='Guest',
             email='guest@example.com',
             site='http://guest.com',
-            body='I am a guest comment',
+            body='I am a guest comment.',
             post=Post.query.get(1),
         ), follow_redirects=True)
         data = response.get_data(as_text=True)
@@ -117,7 +116,7 @@ class AdminTestCase(BaseTestCase):
         data = response.get_data(as_text=True)
         self.assertIn('Comment published.', data)
 
-        response = self.client.post(url_for('blog.show_post', post_id=1))
+        response = self.client.get(url_for('blog.show_post', post_id=1))    # `self.client.post()` also works.
         data = response.get_data(as_text=True)
         self.assertIn('I am a guest comment.', data)
 
@@ -150,7 +149,7 @@ class AdminTestCase(BaseTestCase):
         self.assertNotIn('Category updated.', data)
         self.assertIn('Default', data)
         self.assertNotIn('Default edited.', data)
-        self.assertIn('You can not edit the default category.', data)
+        self.assertIn('You cannot edit the default category.', data)
 
         response = self.client.post(url_for('admin.new_category'), data=dict(name='Tech'), follow_redirects=True)
         data = response.get_data(as_text=True)
@@ -183,7 +182,7 @@ class AdminTestCase(BaseTestCase):
 
         response = self.client.post(url_for('admin.delete_category', category_id=1), follow_redirects=True)
         data = response.get_data(as_text=True)
-        self.assertIn('You can not delete the default category.', data)
+        self.assertIn('You cannot delete the default category.', data)
         self.assertNotIn('Category deleted.', data)
         self.assertIn('Default',data)
 
@@ -225,7 +224,7 @@ class AdminTestCase(BaseTestCase):
         response = self.client.get(url_for('admin.delete_link', link_id=1), follow_redirects=True)
         data = response.get_data(as_text=True)
         self.assertNotIn('Link deleted.', data)
-        self.assertIn('405 Method Not Allowed.', data)
+        self.assertIn('405 Method Not Allowed', data)   # No `.` at the end of `405 Method Not Allowed`
 
         response = self.client.post(url_for('admin.delete_link', link_id=1), follow_redirects=True)
         data = response.get_data(as_text=True)
@@ -271,6 +270,3 @@ class AdminTestCase(BaseTestCase):
         data = response.get_data(as_text=True)
         self.assertIn('Dear God', data)
 
-
-if __name__ == '__main__':
-    unittest.main(verbosity=2)

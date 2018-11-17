@@ -185,7 +185,7 @@ def edit_category(category_id):
 def delete_category(category_id):
     category = Category.query.get_or_404(category_id)
     if category.id == 1:
-        flash('You cannot delete the default category', 'warning')
+        flash('You cannot delete the default category.', 'warning')
         return redirect(url_for('blog.index'))
     category.delete()   # method `delete() ` is defined in Model `Category`
     flash('Category deleted.', 'success')
