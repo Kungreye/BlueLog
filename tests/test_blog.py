@@ -88,7 +88,7 @@ class BlogTestCase(BaseTestCase):
         response = self.client.get(url_for('blog.reply_comment', comment_id=1), follow_redirects=True)
         data = response.get_data(as_text=True)
         self.assertIn('Reply to', data)
-        self.assertIn('cancel', data)
+        self.assertIn('Cancel', data)
 
         post = Post.query.get(1)
         post.can_comment = False
@@ -102,7 +102,7 @@ class BlogTestCase(BaseTestCase):
 
     def test_new_admin_reply(self):
         response = self.client.post(url_for('blog.show_post', post_id=1) + '?reply=1', data=dict(
-            body='I am an admin reply comment',
+            body='I am an admin reply comment.',
             post=Post.query.get(1),
         ), follow_redirects=True)
         data = response.get_data(as_text=True)
