@@ -109,3 +109,6 @@ venv.bak/
 
 # .db
 *.db
+
+# .log
+*.log
