@@ -12,27 +12,27 @@
 <br>
 
 ## Manage Posts
-<img src='https://github.com/Kungreye/BlueLog/blob/master/IMGs/Manage Posts.png'/>
+<img src='https://github.com/Kungreye/BlueLog/blob/master/IMGs/Manage_posts.png'/>
 <br>
 
 ## Mange Comments
-<img src='https://github.com/Kungreye/BlueLog/blob/master/IMGs/Manage Comments.png'/>
+<img src='https://github.com/Kungreye/BlueLog/blob/master/IMGs/Manage_comments.png'/>
 <br>
 
 ## Manage Categories
-<img src='https://github.com/Kungreye/BlueLog/blob/master/IMGs/Manage Categories.png'/>
+<img src='https://github.com/Kungreye/BlueLog/blob/master/IMGs/Manage_categories.png'/>
 <br>
 
 ## Manage Links
-<img src='https://github.com/Kungreye/BlueLog/blob/master/IMGs/Manage Links.png'/>
+<img src='https://github.com/Kungreye/BlueLog/blob/master/IMGs/Manage_links.png'/>
 <br>
 
 ## New Post
-<img src='https://github.com/Kungreye/BlueLog/blob/master/IMGs/New Post.png'/>
+<img src='https://github.com/Kungreye/BlueLog/blob/master/IMGs/New_post.png'/>
 <br>
 
 ## New Category
-<img src='https://github.com/Kungreye/BlueLog/blob/master/IMGs/New Category.png'/>
+<img src='https://github.com/Kungreye/BlueLog/blob/master/IMGs/New_category.png'/>
 <br>
 
 ## Settings
