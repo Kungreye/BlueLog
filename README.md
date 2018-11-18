@@ -24,7 +24,7 @@
 <br>
 
 ## Manage Links
-<img src='https://github.com/Kungreye/BlueLog/blob/master/IMGs/Manage_links.png'/>
+<img src='https://github.com/Kungreye/BlueLog/blob/master/IMGs/Manange_links.png'/>
 <br>
 
 ## New Post
