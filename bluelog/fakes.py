@@ -15,10 +15,10 @@ fake = Faker()
 
 def fake_admin():
     admin = Admin(
-        username='admin',
+        username='Jeremy Lin',
         blog_title='BlueLog',
         blog_sub_title='Nothing is real, but all is possible',
-        name='Jack Jones',
+        name='Jeremy Lin',
         about='The captain of um...'
     )
     admin.set_password('SEEYOUAGAIN')
