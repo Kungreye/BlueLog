@@ -10,6 +10,8 @@ from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import CSRFProtect
 
+from flask_debugtoolbar import DebugToolbarExtension
+
 
 bootstrap = Bootstrap()
 db = SQLAlchemy()
@@ -19,6 +21,7 @@ login_manager = LoginManager()
 mail = Mail()
 migrate = Migrate()
 moment = Moment()
+toolbar = DebugToolbarExtension()   # only for development, not for production.
 
 
 @login_manager.user_loader
