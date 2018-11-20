@@ -25,11 +25,12 @@ flask-wtf = "*"
 faker = "*"
 flask-login = "*"
 flask-migrate = "*"
+
+[dev-packages]
+faker = "*"
 flask-debugtoolbar = "*"
 coverage = "*"
 "flake8" = "*"
-
-[dev-packages]
 
 [requires]
 python_version = "3.7"
