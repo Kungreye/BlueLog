@@ -1,6 +1,30 @@
 # BlueLog
-<p>A Blog implemented via Flask.  <i>Demo views as below</i></p>
+<p>A Blog implemented via Flask.</p>
 <br>
+
+## Features
+- Post display (according to category)
+- Theme changeable
+- Comment to Post
+- Comment reply
+- Manage Post/Comment/Category/Link
+- Rich Text in new Post
+<br>
+
+## Extensions
+- flask-sqlalchemy
+- flask-mail
+- flask-moment
+- bootstrap-flask
+- python-dotenv
+- flask-ckeditor
+- flask-wtf
+- faker
+- flask-login
+- flask-migrat
+<br>
+
+## <i>Demo views as below</i>
 
 ## Home
 <img src='https://github.com/Kungreye/BlueLog/blob/master/IMGs/Home_blue.png'/>
