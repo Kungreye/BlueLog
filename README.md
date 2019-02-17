@@ -21,7 +21,7 @@
 - flask-wtf
 - faker
 - flask-login
-- flask-migrat
+- flask-migrate
 <br>
 
 ## <i>Demo views as below</i>
